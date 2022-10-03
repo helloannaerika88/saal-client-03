@@ -62,7 +62,7 @@ function AddRoom(props) {
   
 
   return (
-    <div className="AddRoom">
+    <div className="AddRoom py-1.5">
       <h3>Add Room</h3>
 
       <form onSubmit={handleSubmit}>
@@ -82,7 +82,28 @@ function AddRoom(props) {
           onChange={(e) => setDescription(e.target.value)}
         />
 
-        <input type="file" onChange={(e) => handleFileUpload(e)} />
+<div className="flex justify-center">
+  <div className="mb-3 w-96">
+    <label for="formFile" className="form-label inline-block mb-2 text-gray-700">Add picture*</label>
+    <input className="form-control
+    block
+    w-full
+    px-3
+    py-1.5
+    text-base
+    font-normal
+    text-gray-700
+    bg-white bg-clip-padding
+    border border-solid border-gray-300
+    rounded
+    transition
+    ease-in-out
+    m-0
+    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" type="file" id="formFile"/>
+  </div>
+</div>
+
+        {/* <input type="file" onChange={(e) => handleFileUpload(e)} /> */}
 
         <button type="submit" className="btn-primary">Submit</button>
       </form>

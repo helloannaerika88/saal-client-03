@@ -6,7 +6,20 @@ function Navbar() {
     const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
   return (
-    <nav className="flex sm:justify-center space-x-4 px-0.5">
+    <nav className="
+relative
+w-full
+flex flex-wrap
+items-center
+justify-between
+py-4
+bg-gray-100
+text-gray-500
+hover:text-gray-700
+focus:text-gray-700
+shadow-lg
+navbar navbar-expand-lg navbar-light
+    ">
       {user && <span>Welcome back {user.name}</span>}
       <Link to="/">
         <button>Home</button>
