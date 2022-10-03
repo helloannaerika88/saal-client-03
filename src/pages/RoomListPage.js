@@ -3,14 +3,13 @@ import axios from "axios";
 
 import RoomCard from "../components/RoomCard";
 import AddRoom from "../components/AddRoom"; 
-import MovieCard from "../components/MovieCard";
 
 function RoomListPage() {
   const [rooms, setRooms] = useState([]);
-
+  
   const getAllRooms = () => {
     const storedToken = localStorage.getItem("authToken");
-
+    console.log(storedToken)
     axios
       .get(`${process.env.REACT_APP_API_URL}/api/rooms`,
       { headers: { Authorization: `Bearer ${storedToken}` } })
@@ -31,7 +30,7 @@ function RoomListPage() {
       <AddRoom refreshRooms={getAllRooms} />
       
       { rooms.map((room) => <RoomCard key={room._id} {...room} />  )} 
-     {/* <MovieCard /> */}
+    
     </div>
   );
 }

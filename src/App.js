@@ -2,7 +2,7 @@ import './App.css';
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Homepage from "./pages/HomePage";
-import AddMovie from './components/AddMovie';
+
 import RoomListPage from "./pages/RoomListPage";
 import RoomDetailsPage from "./pages/RoomDetailsPage";
 import RoomEditPage from "./pages/RoomEditPage";
@@ -22,7 +22,6 @@ function App() {
 
     <Routes>
       <Route exact path="/" element={ <Homepage /> } />
-      <Route path="/movies/add" element={ <AddMovie /> } />
       <Route exact path="/signup" element={ <IsAnon><SignupPage /></IsAnon> } />
       <Route exact path="/login" element={ <IsAnon><LoginPage /></IsAnon> } />
       <Route exact path="/rooms" element={ <RoomListPage /> } />

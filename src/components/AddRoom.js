@@ -1,20 +1,23 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useContext } from "react";
+// import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/auth.context";
 import axios from "axios";
 import service from "../api/service";
 
 const API_URL = "http://localhost:5005";
 
 function AddRoom(props) {
+  const { user } = useContext(AuthContext)
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [imageUrl, setImageUrl] = useState("");
+  // const [owner] = useState(user._id);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleFileUpload = (e) => {
     // console.log("The file to be uploaded is: ", e.target.files[0]);
-    const storedToken = localStorage.getItem('authToken');
+    const storedToken = localStorage.getItem("authToken");
     const uploadData = new FormData();
 
     // imageUrl => this name has to be the same as in the model since we pass
@@ -24,6 +27,7 @@ function AddRoom(props) {
     service
       .uploadImage(uploadData, {headers: {Authorization: `Bearer ${storedToken}`}})
       .then(response => {
+        console.log(response)
         // console.log("response is: ", response);
         // response carries "fileUrl" which we can use to update the state
         setImageUrl(response.imageUrl);
@@ -34,14 +38,18 @@ function AddRoom(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const requestBody = { title, description, imageUrl };
+    const requestBody = { title, description, imageUrl, owner: user._id };
     const storedToken = localStorage.getItem('authToken');
 
-
+    // service
+    //   .createMovie({ title, description, imageUrl })
+    //   .catch(err => console.log("Error while adding the new movie: ", err));
+  
 
     axios
       .post(`${process.env.REACT_APP_API_URL}/api/rooms`, requestBody, {headers: {Authorization: `Bearer ${storedToken}`}} )
       .then((response) => {
+        console.log(response.data)
         // Reset the state
         setTitle("");
         setDescription("");

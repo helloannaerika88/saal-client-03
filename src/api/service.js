@@ -19,7 +19,7 @@ const getMovies = () => {
 };
 
 const uploadImage = (file, headersConfiguration) => {
-  return api.post("/rooms", file, headersConfiguration)
+  return api.post("/upload", file, headersConfiguration)
     .then(res => res.data)
     .catch(errorHandler);
 };

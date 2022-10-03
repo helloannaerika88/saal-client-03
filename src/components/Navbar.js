@@ -6,13 +6,13 @@ function Navbar() {
     const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
   return (
-    <nav className="flex sm:justify-center space-x-4">
+    <nav className="flex sm:justify-center space-x-4 px-0.5">
       {user && <span>Welcome back {user.name}</span>}
       <Link to="/">
         <button>Home</button>
       </Link>
 
-      <Link to="/movies/add"> Add a movie </Link>
+      {/* <Link to="/movies/add"> Add a movie </Link> */}
 
       {isLoggedIn && (
         <>

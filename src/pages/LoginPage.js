@@ -58,7 +58,7 @@ function LoginPage(props) {
 
         <br/>
 
-        <button type="submit">Login</button>
+        <button className="btn-primary" type="submit">Login</button>
       </form>
       { errorMessage && <p className="error-message">{errorMessage}</p> }
  
