@@ -6,7 +6,7 @@ function Navbar() {
     const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
   return (
-    <nav>
+    <nav className="flex sm:justify-center space-x-4">
       {user && <span>Welcome back {user.name}</span>}
       <Link to="/">
         <button>Home</button>

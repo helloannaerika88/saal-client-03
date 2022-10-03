@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import service from "../api/service";
 
-function HomePage() {
-  const [movies, setMovies] = useState([]);
+function MovieCard({ title, description, imageUrl }) {
 
-  // Run the effect after the initial render to get a list of movies from the server
+    const [movies, setMovies] = useState([]);
+
+    // Run the effect after the initial render to get a list of movies from the server
   useEffect(() => {
     service.getMovies()
       .then((data) => {
@@ -14,9 +15,10 @@ function HomePage() {
       .catch((err) => console.log(err));
   }, []); //  <-- This effect will run only once, after the initial render
 
-  return (
-    <div className="HomePage">
-      <h2 className="text-3xl font-bold underline">Movies</h2>
+
+    return (
+        <div>
+            <h2 className="text-3xl font-bold underline">Movies</h2>
       {movies &&
         movies.map((movie) => (
           <div key={movie._id}>
@@ -25,8 +27,8 @@ function HomePage() {
             <p>{movie.description}</p>
           </div>
         ))}
-    </div>
-  );
+        </div>
+    )
 }
 
-export default HomePage;
+export default MovieCard;

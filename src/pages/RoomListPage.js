@@ -3,6 +3,7 @@ import axios from "axios";
 
 import RoomCard from "../components/RoomCard";
 import AddRoom from "../components/AddRoom"; 
+import MovieCard from "../components/MovieCard";
 
 function RoomListPage() {
   const [rooms, setRooms] = useState([]);
@@ -30,6 +31,7 @@ function RoomListPage() {
       <AddRoom refreshRooms={getAllRooms} />
       
       { rooms.map((room) => <RoomCard key={room._id} {...room} />  )} 
+     <MovieCard />
     </div>
   );
 }
