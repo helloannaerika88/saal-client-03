@@ -31,7 +31,7 @@ function RoomListPage() {
       <AddRoom refreshRooms={getAllRooms} />
       
       { rooms.map((room) => <RoomCard key={room._id} {...room} />  )} 
-     <MovieCard />
+     {/* <MovieCard /> */}
     </div>
   );
 }

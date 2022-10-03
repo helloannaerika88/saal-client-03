@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import service from "../api/service";
 
@@ -9,9 +10,11 @@ function AddRoom(props) {
   const [description, setDescription] = useState("");
   const [imageUrl, setImageUrl] = useState("");
 
+  const navigate = useNavigate();
+
   const handleFileUpload = (e) => {
     // console.log("The file to be uploaded is: ", e.target.files[0]);
-
+    const storedToken = localStorage.getItem('authToken');
     const uploadData = new FormData();
 
     // imageUrl => this name has to be the same as in the model since we pass
@@ -19,11 +22,11 @@ function AddRoom(props) {
     uploadData.append("imageUrl", e.target.files[0]);
 
     service
-      .uploadImage(uploadData)
+      .uploadImage(uploadData, {headers: {Authorization: `Bearer ${storedToken}`}})
       .then(response => {
         // console.log("response is: ", response);
         // response carries "fileUrl" which we can use to update the state
-        setImageUrl(response.fileUrl);
+        setImageUrl(response.imageUrl);
       })
       .catch(err => console.log("Error while uploading the file: ", err));
   };
@@ -33,6 +36,8 @@ function AddRoom(props) {
 
     const requestBody = { title, description, imageUrl };
     const storedToken = localStorage.getItem('authToken');
+
+
 
     axios
       .post(`${process.env.REACT_APP_API_URL}/api/rooms`, requestBody, {headers: {Authorization: `Bearer ${storedToken}`}} )

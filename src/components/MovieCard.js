@@ -9,7 +9,7 @@ function MovieCard({ title, description, imageUrl }) {
   useEffect(() => {
     service.getMovies()
       .then((data) => {
-        // console.log("data", data);
+        console.log("data", data);
         setMovies(data);
       })
       .catch((err) => console.log(err));
