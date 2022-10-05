@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 // import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import axios from "axios";
-import service from "../api/service";
+import {uploadImage} from "../api/service";
 
 
 
@@ -24,8 +24,7 @@ function AddRoom(props) {
     // req.body to .create() method when creating a new movie in '/api/movies' POST route
     uploadData.append("imageUrl", e.target.files[0]);
 
-    service
-      .uploadImage(uploadData, {headers: {Authorization: `Bearer ${storedToken}`}})
+    uploadImage(uploadData, {headers: {Authorization: `Bearer ${storedToken}`}})
       .then(response => {
         console.log(response)
         // console.log("response is: ", response);

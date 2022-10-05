@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import axios from "axios";
-import serviceItem from "../api/serviceItem";
+import { uploadImage } from "../api/serviceItem";
 
 function AddItem(props) {
   const { user } = useContext(AuthContext)
@@ -18,8 +18,7 @@ function AddItem(props) {
     // req.body to .create() method when creating a new movie in '/api/movies' POST route
     uploadData.append("imageUrl", e.target.files[0]);
 
-    serviceItem
-      .uploadImage(uploadData, {headers: {Authorization: `Bearer ${storedToken}`}})
+      uploadImage(uploadData, {headers: {Authorization: `Bearer ${storedToken}`}})
       .then(response => {
         console.log(response)
         // console.log("response is: ", response);
