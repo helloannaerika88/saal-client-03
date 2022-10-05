@@ -2,7 +2,7 @@ import './App.css';
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Homepage from "./pages/HomePage";
-
+import Profile from "./pages/Profile"
 import RoomListPage from "./pages/RoomListPage";
 import RoomDetailsPage from "./pages/RoomDetailsPage";
 import RoomEditPage from "./pages/RoomEditPage";
@@ -22,6 +22,7 @@ function App() {
 
     <Routes>
       <Route exact path="/" element={ <Homepage /> } />
+      <Route exact path="/profile" element={ <Profile /> } />
       <Route exact path="/signup" element={ <IsAnon><SignupPage /></IsAnon> } />
       <Route exact path="/login" element={ <IsAnon><LoginPage /></IsAnon> } />
       <Route exact path="/rooms" element={ <RoomListPage /> } />

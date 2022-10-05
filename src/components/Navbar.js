@@ -20,9 +20,13 @@ focus:text-gray-700
 shadow-lg
 navbar navbar-expand-lg navbar-light
     ">
+<div className="container-fluid w-90 flex flex-row flex-wrap items-center justify-between px-6">
+{/* <div class="collapse navbar-collapse flex-grow items-center" id="navbarSupportedContent"> */}
+
+
       {user && <span>Welcome back {user.name}</span>}
       <Link to="/">
-        <button>Home</button>
+        <button className="btn-navbar">Home</button>
       </Link>
 
       {/* <Link to="/movies/add"> Add a movie </Link> */}
@@ -30,21 +34,26 @@ navbar navbar-expand-lg navbar-light
       {isLoggedIn && (
         <>
           <Link to="/rooms">
-            <button>Rooms</button>
+            <button className="btn-navbar">Rooms</button>
           </Link>
           <Link to="/items">
-            <button>Items</button>
+            <button className="btn-navbar">Items</button>
+          </Link>
+          <Link to="/profile">
+          <button className="btn-navbar">my Profile</button>
           </Link>           
-          <button onClick={logOutUser}>Logout</button>
+          <button className="btn-navbar" onClick={logOutUser}>Logout</button>
         </>
       )}
  
       {!isLoggedIn && (
         <>
-          <Link to="/signup"> <button>Sign Up</button> </Link>
-          <Link to="/login"> <button>Login</button> </Link>
+          <Link to="/signup"> <button className="btn-navbar">Sign Up</button> </Link>
+          <Link to="/login"> <button className="btn-navbar">Login</button> </Link>
         </>
       )}
+        </div>
+      {/* </div> */}
     </nav>
   );
 }

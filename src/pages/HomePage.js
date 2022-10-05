@@ -18,7 +18,7 @@ function HomePage() {
 
   return (
     <div className="HomePage p-9">
-      <h2 className="text-3xl font-bold underline">Movies</h2>
+      <h2 className="text-3xl font-bold underline">Hello World!</h2>
       { rooms.map((room) => <RoomCard key={room._id} {...room} />  )} 
       {rooms &&
         rooms.map((room) => (

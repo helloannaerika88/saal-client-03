@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 import ItemCard from "../components/ItemCard";
-import AddItem from "../components/AddItem"; 
+
 
 function ItemListPage() {
   const [items, setItems] = useState([]);
@@ -27,9 +27,11 @@ function ItemListPage() {
   return (
     <div className="ItemListPage">
       
-      <AddItem refreshItems={getAllItems} />
+<div className="container mx-auto p-6 grid grid-cols-3 gap-4">
+{ items.map((item) => <ItemCard key={item._id} {...item} />  )} 
+</div>
       
-      { items.map((item) => <ItemCard key={item._id} {...item} />  )} 
+      {/* { items.map((item) => <ItemCard key={item._id} {...item} />  )}  */}
     </div>
   );
 }
