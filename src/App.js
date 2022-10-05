@@ -22,7 +22,7 @@ function App() {
 
     <Routes>
       <Route exact path="/" element={ <Homepage /> } />
-      <Route exact path="/profile" element={ <Profile /> } />
+      <Route exact path="/users/profile" element={ <Profile /> } />
       <Route exact path="/signup" element={ <IsAnon><SignupPage /></IsAnon> } />
       <Route exact path="/login" element={ <IsAnon><LoginPage /></IsAnon> } />
       <Route exact path="/rooms" element={ <RoomListPage /> } />

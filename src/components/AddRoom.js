@@ -94,7 +94,7 @@ function AddRoom(props) {
       name="description"
       value={description}
       onChange={(e) => setDescription(e.target.value)}
-      class="
+      className="
         form-control
         block
         w-full
@@ -118,7 +118,7 @@ function AddRoom(props) {
     </div>
 
     <div className="mb-3 w-96">
-    <label for="formFile" className="form-label inline-block mb-2 text-gray-700">Add picture*</label>
+    <label htmlFor="formFile" className="form-label inline-block mb-2 text-gray-700">Add picture*</label>
     <input onChange={(e) => handleFileUpload(e)} className="form-control
     block
     w-full

@@ -39,10 +39,12 @@ navbar navbar-expand-lg navbar-light
           <Link to="/items">
             <button className="btn-navbar">Items</button>
           </Link>
-          <Link to="/profile">
+          <Link to="/users/profile">
           <button className="btn-navbar">my Profile</button>
-          </Link>           
+          </Link>
+          <Link to="/">          
           <button className="btn-navbar" onClick={logOutUser}>Logout</button>
+          </Link> 
         </>
       )}
  
