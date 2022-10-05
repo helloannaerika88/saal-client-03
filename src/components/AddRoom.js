@@ -4,7 +4,7 @@ import { AuthContext } from "../context/auth.context";
 import axios from "axios";
 import service from "../api/service";
 
-const API_URL = "http://localhost:5005";
+
 
 function AddRoom(props) {
   const { user } = useContext(AuthContext)

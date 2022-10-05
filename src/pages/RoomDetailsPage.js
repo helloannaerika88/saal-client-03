@@ -5,8 +5,6 @@ import AddItem from "../components/AddItem";
 import ItemCard from "../components/ItemCard";
 
 
-const API_URL = "http://localhost:5005";
-
 
 function RoomDetailsPage (props) {
   const [room, setRoom] = useState(null);

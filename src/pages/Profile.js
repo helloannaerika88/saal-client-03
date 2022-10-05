@@ -1,10 +1,10 @@
 import { useState, useEffect, useContext } from "react";
-import { useParams, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import AddRoom from "../components/AddRoom";
-import AddItem from "../components/AddItem";
+// import AddItem from "../components/AddItem";
 import RoomCard from "../components/RoomCard";
-import UserCard from "../components/UserCard";
+// import UserCard from "../components/UserCard";
 import { AuthContext } from "../context/auth.context"
 
 function Profile() {

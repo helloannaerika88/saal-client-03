@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from "axios";
 
-const API_URL = "http://localhost:5005";
-
 function RoomEditPage(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -21,7 +19,7 @@ function RoomEditPage(props) {
         setDescription(oneRoom.description);
       })
       .catch((error) => console.log(error));
-    
+    // eslint-disable-next-line
   }, [roomId]);
   
 

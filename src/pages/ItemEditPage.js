@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from "axios";
 
-const API_URL = "http://localhost:5005";
+
 
 function ItemEditPage(props) {
   const [title, setTitle] = useState("");
@@ -27,7 +27,7 @@ function ItemEditPage(props) {
       })
       .catch((error) => console.log(error));
 
-    
+    // eslint-disable-next-line
   }, [itemId]);
   
 

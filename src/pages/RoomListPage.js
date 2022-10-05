@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 import RoomCard from "../components/RoomCard";
-import AddRoom from "../components/AddRoom"; 
+// import AddRoom from "../components/AddRoom"; 
 
 function RoomListPage() {
   const [rooms, setRooms] = useState([]);
