@@ -30,7 +30,7 @@ const createMovie = (newMovie) => {
     .catch(errorHandler);
 };
 
-export default {
+export {
   getMovies,
   uploadImage,
   createMovie
