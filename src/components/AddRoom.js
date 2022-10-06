@@ -63,7 +63,7 @@ function AddRoom(props) {
     <div className="AddRoom py-1.5">
       <h3>Add New Room</h3>
 
-      <div className="block mx-auto p-6 rounded-lg shadow-lg bg-white max-w-md">
+<div className="block mx-auto p-6 rounded-lg shadow-lg bg-white max-w-md">
   <form onSubmit={handleSubmit}>
     <div className="form-group mb-6">
       <input type="text" 

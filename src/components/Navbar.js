@@ -25,7 +25,7 @@ navbar navbar-expand-lg navbar-light
 {/* <div class="collapse navbar-collapse flex-grow items-center" id="navbarSupportedContent"> */}
 
 
-      {user && <span>Welcome back {user.name}</span>}
+      {user && <span className="pr-4">Welcome back, {user.name}</span>}
       <NavLink to="/">
         <button className="btn-navbar">Home</button>
       </NavLink>
@@ -58,7 +58,7 @@ navbar navbar-expand-lg navbar-light
         </div>
       {/* </div> */}
 
-      <button className="btn-navbar px-8" onClick={toggleTheme}>
+      <button className="btn-theme px-8" onClick={toggleTheme}>
         {theme === 'light' ? 'dark 🌜 ' : 'light 🟡 '}
       </button>
     </nav>

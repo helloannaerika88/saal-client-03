@@ -26,7 +26,7 @@ function RoomListPage() {
   
   return (
 <div className="RoomListPage">
-      <h2 className="text-3xl font-bold underline">List of Rooms</h2>
+      {/* <h2 className="text-3xl font-bold underline">List of Rooms</h2> */}
 
 {/* <p className="md:space-x-1 space-y-1 md:space-y-0 mb-4">
    <button className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" type="button" data-bs-toggle="collapse show" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
