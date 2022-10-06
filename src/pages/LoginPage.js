@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import {AuthContext} from '../context/auth.context';
+import { ThemeContext } from '../context/theme.context'
  
  
 function LoginPage(props) {
@@ -15,7 +16,8 @@ function LoginPage(props) {
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
  
-  
+  const { theme } = useContext(ThemeContext);
+
   const handleLoginSubmit = (e) => {
     e.preventDefault();
     const requestBody = { email, password };
@@ -59,9 +61,9 @@ function LoginPage(props) {
     //     </form>
     //   </div>
       
-  <div>
+  <div className={`${theme} pt-44`}>
   <h1>Login</h1>
-  <div className="block mx-auto p-6 rounded-lg shadow-lg bg-white max-w-md">
+  <div className={`block mx-auto p-6 rounded-lg shadow-lg bg-white max-w-md`}>
   <form onSubmit={handleLoginSubmit}>
     <div className="form-group mb-6">
       <input type="email" 
