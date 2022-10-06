@@ -35,7 +35,7 @@ function SignupPage(props) {
  
   
   return (
-    <div className="SignupPage">
+    <div className="pt-44">
       <h1>Sign Up</h1>
  
       {/* <form onSubmit={handleSignupSubmit}>
@@ -157,6 +157,8 @@ function SignupPage(props) {
       ease-in-out">Login</button>
   </form>
 </div>
+
+<br/>
  
       { errorMessage && <p className="error-message">{errorMessage}</p> }
  
