@@ -54,7 +54,7 @@ function AddItem(props) {
 
   
   return (
-    <div className="AddItem py-1.5">
+    <div className="AddItem pt-14 pb-3">
       <h3>Add New Item</h3>
 
       <div className="block mx-auto p-6 rounded-lg shadow-lg bg-white max-w-md">
