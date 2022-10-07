@@ -12,6 +12,7 @@ function Navbar() {
   return (
     <nav className=
     {`Navbar ${theme}
+    pl-12
 relative
 w-full
 flex flex-wrap
@@ -59,7 +60,7 @@ navbar navbar-expand-lg navbar-light
         </div>
       {/* </div> */}
 
-        <div className="flex">
+        <div className="flex pr-12">
       <img src="/micasa-logo-1.png" alt="logo" className="h-8 mx-auto btn-navbar"/>
       <button className="btn-theme px-8" onClick={toggleTheme}>
         {theme === 'light' ? 'dark 🌜 ' : 'light 🟡 '}

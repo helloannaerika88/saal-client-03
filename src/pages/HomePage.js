@@ -5,17 +5,75 @@ import { ThemeContext } from '../context/theme.context';
 function HomePage() {
   const { theme } = useContext(ThemeContext);
 
-
   return (
-    <div className={`HomePage ${theme}`}>
-      <h1 className="text-3xl font-bold underline">Hello World!</h1>
+    <div className='pb-44px'>
+    <section>
+    <div className={`HomePage ${theme} flex pt-36`}>
+    <div className='w-1/2'>
+    <h1 className="text-6xl font-weight-700 pt-12">be <span className='text-primary'>inspired </span> </h1>
 
-      <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed viverra tellus in hac habitasse platea dictumst vestibulum. Lacus laoreet non curabitur gravida. Morbi tristique senectus et netus et malesuada fames. Sed ullamcorper morbi tincidunt ornare. Luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor purus. Ut venenatis tellus in metus vulputate eu. Quis imperdiet massa tincidunt nunc pulvinar sapien. Ultricies integer quis auctor elit sed. Ac orci phasellus egestas tellus. Nullam eget felis eget nunc lobortis mattis aliquam faucibus purus. Lacus sed viverra tellus in. Neque gravida in fermentum et sollicitudin ac.
+      <p className='px-10 pt-10 text-3xl'>
+      capture. write. post. 
+      <br/>
+      and be <span className='italic'>inspired </span> 
+      <br/>
+      by your surroundings!
       </p>
-     
-      
     </div>
+
+    <div className='w-1/2 px-8'>
+    <img src="/hero-1.jpg" alt="hero"/>
+    </div>
+    </div>
+    </section>
+
+    <section>
+    <div className={`HomePage ${theme} flex pt-36`}>
+
+    <div className='w-1/2 px-8'>
+    <img src="/landing-2.jpg" alt="hero" className='h-full'/>
+    </div>
+
+    <div className='w-1/2'>
+    {/* <h1 className="text-6xl font-weight-700 pt-12">be <span className='text-primary'>inspired </span> </h1> */}
+
+      <p className='px-10 pt-24 text-2xl'>
+      Have you ever admired a beautiful room <br/>
+and asking where people buy
+<br/> these cute little things.
+
+      </p>
+    </div>
+
+    </div>
+    </section>
+
+    <section>
+    <div className={`HomePage ${theme} flex pt-36 pb-24`}>
+
+    <div className='w-1/2'>
+    {/* <h1 className="text-6xl font-weight-700 pt-12">be <span className='text-primary'>inspired </span> </h1> */}
+
+      <p className='px-10 pt-16 text-2xl'>
+      With <span className='text-primary'>micasa </span>,<br/>
+       you can share your pretty little things
+       <br/>
+and get inspiration from other people too.
+
+
+      </p>
+    </div>
+
+    <div className='w-1/2 px-8'>
+    <img src="/landing-3.png" alt="hero"/>
+    </div>
+
+    </div>
+    </section>
+   
+     
+    </div>
+    
   );
 }
 
