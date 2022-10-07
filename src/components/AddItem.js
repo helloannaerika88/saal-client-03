@@ -111,7 +111,7 @@ function AddItem(props) {
     </div>
     
     <div className="mb-3 w-96">
-    <label htmlFor="formFile" className="form-label inline-block mb-2 text-gray-700">Add picture*</label>
+    <label htmlFor="formFile" className="form-label inline-block mb-2 text-gray-700">Add picture* in .png or .jpeg</label>
     <input onChange={(e) => handleFileUpload(e)} className="form-control
     block
     w-full

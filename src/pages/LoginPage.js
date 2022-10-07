@@ -2,8 +2,11 @@ import { useState, useContext } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import {AuthContext} from '../context/auth.context';
-import { ThemeContext } from '../context/theme.context'
- 
+import { ThemeContext } from '../context/theme.context';
+
+import * as animationData from '../lottie/lf30_editor_hoxpd9zc.json'
+import Lottie from 'react-lottie-player'
+
  
 function LoginPage(props) {
   const [email, setEmail] = useState("");
@@ -36,6 +39,15 @@ function LoginPage(props) {
         setErrorMessage(errorDescription);
       })
   };
+
+  // const defaultOptions = {
+  //   loop: true,
+  //   autoplay: true,
+  //   animationData: animationData,
+  //   rendererSettings: {
+  //     preserveAspectRatio: "xMidYMid slice"
+  //   }
+  // };
   
   return (
     // <div className="LoginPage">
@@ -60,8 +72,13 @@ function LoginPage(props) {
     //       <button>Submit</button>
     //     </form>
     //   </div>
-      
-  <div className={`${theme} pt-44`}>
+
+  
+<>
+  <div className="flex pt-36">
+  
+
+  <div className={`${theme} pt-10 w-1/2`}>
   <h1>Login</h1>
   <div className={`block mx-auto p-6 rounded-lg shadow-lg bg-white max-w-md`}>
   <form onSubmit={handleLoginSubmit}>
@@ -139,6 +156,19 @@ function LoginPage(props) {
       <p>Don't have an account yet?</p>
       <Link to={"/signup"}> Sign Up</Link>
     </div>
+
+    <div className="w-1/2">
+      
+    </div>
+    <Lottie
+      loop
+      animationData={animationData}
+      play
+      style={{ width: 400, height: 400, margin:"0 auto" }}
+    />
+
+    </div>
+    </>
   )
 }
 
