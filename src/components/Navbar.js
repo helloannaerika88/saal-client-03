@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import { ThemeContext } from "../context/theme.context";
 
+
 function Navbar() {
     const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
     const { theme, toggleTheme } = useContext(ThemeContext);
@@ -58,9 +59,12 @@ navbar navbar-expand-lg navbar-light
         </div>
       {/* </div> */}
 
+        <div className="flex">
+      <img src="/micasa-logo-1.png" alt="logo" className="h-8 mx-auto btn-navbar"/>
       <button className="btn-theme px-8" onClick={toggleTheme}>
         {theme === 'light' ? 'dark 🌜 ' : 'light 🟡 '}
       </button>
+      </div>
     </nav>
   );
 }

@@ -15,6 +15,7 @@ import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import IsPrivate from "./components/IsPrivate";
 import IsAnon from "./components/IsAnon";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   const { theme } = useContext(ThemeContext);
@@ -35,6 +36,8 @@ function App() {
       <Route exact path="/items" element={ <ItemListPage /> } />
       <Route exact path="/items/:itemId" element={ <ItemDetailsPage /> } />
       <Route exact path="/items/edit/:itemId" element={ <IsPrivate><ItemEditPage /></IsPrivate>  } />
+      <Route exact path="*" element={<NotFoundPage />} />
+      
     </Routes>
 
     </div>

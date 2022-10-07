@@ -1,6 +1,9 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Lottie from 'react-lottie';
+import * as animationData from '../lottie/lf30_editor_hoxpd9zc.json'
+
  
 function SignupPage(props) {
   const [email, setEmail] = useState("");
@@ -32,13 +35,21 @@ function SignupPage(props) {
         setErrorMessage(errorDescription);
       })
   };
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice"
+    }
+  };
  
   
   return (
-    <div className="pt-44">
-      <h1>Sign Up</h1>
+    
  
-      {/* <form onSubmit={handleSignupSubmit}>
+      /* <form onSubmit={handleSignupSubmit}>
         <label>Email:</label>
         <input 
           type="email"
@@ -66,10 +77,39 @@ function SignupPage(props) {
         <br/>
  
         <button type="submit">Sign Up</button>
-      </form> */}
+      </form> */
+<>
+  <div className="flex pt-36">
+  
+  
 
-      <div className="block mx-auto p-6 rounded-lg shadow-lg bg-white max-w-md">
+  <div className={`pt-10 w-1/2`}>
+  <h1>Signup</h1>
+  <div className={`block mx-auto p-6 rounded-lg shadow-lg bg-white max-w-md`}>
   <form onSubmit={handleSignupSubmit}>
+
+  <div className="form-group mb-6">
+      <input type="text" 
+          name="name"
+          value={name}
+          onChange={handleName}
+          className="form-control block
+        w-full
+        px-3
+        py-1.5
+        text-base
+        font-normal
+        text-gray-700
+        bg-white bg-clip-padding
+        border border-solid border-gray-300
+        rounded
+        transition
+        ease-in-out
+        m-0
+        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7"
+        placeholder="your username"/>
+    </div>
+
     <div className="form-group mb-6">
       <input type="email" 
           name="email"
@@ -88,7 +128,7 @@ function SignupPage(props) {
         transition
         ease-in-out
         m-0
-        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput17"
+        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7"
         placeholder="email"/>
     </div>
 
@@ -110,32 +150,11 @@ function SignupPage(props) {
         transition
         ease-in-out
         m-0
-        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput18"
+        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput8"
         placeholder="password"/>
     </div>
 
-    <div className="form-group mb-6">
-      <input type="text" 
-          name="name"
-          value={name}
-          onChange={handleName}
-          className="form-control block
-        w-full
-        px-3
-        py-1.5
-        text-base
-        font-normal
-        text-gray-700
-        bg-white bg-clip-padding
-        border border-solid border-gray-300
-        rounded
-        transition
-        ease-in-out
-        m-0
-        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput19"
-        placeholder="your beautiful name"/>
-    </div>
-
+    
     <button type="submit"
     className="
       w-full
@@ -154,17 +173,29 @@ function SignupPage(props) {
       active:bg-blue-800 active:shadow-lg
       transition
       duration-150
-      ease-in-out">Login</button>
+      ease-in-out">Signup</button>
   </form>
 </div>
+        <br/>
 
-<br/>
- 
+        {/* <button className="btn-primary" type="submit">Login</button> */}
+      
       { errorMessage && <p className="error-message">{errorMessage}</p> }
  
-      <p>Already have account?</p>
-      <Link to={"/login"}> Login</Link>
+    
     </div>
+
+    <div className="w-1/2">
+      <Lottie 
+	    options={defaultOptions}
+        height={400}
+        width={400}
+      />
+    </div>
+
+
+    </div>
+    </> 
   )
 }
  
