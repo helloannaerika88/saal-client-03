@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Lottie from 'react-lottie';
+// import Lottie from 'react-lottie';
+import Lottie from 'react-lottie-player'
 import * as animationData from '../lottie/lf30_editor_hoxpd9zc.json'
 
  
@@ -36,14 +37,14 @@ function SignupPage(props) {
       })
   };
 
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice"
-    }
-  };
+  // const defaultOptions = {
+  //   loop: true,
+  //   autoplay: true,
+  //   animationData: animationData,
+  //   rendererSettings: {
+  //     preserveAspectRatio: "xMidYMid slice"
+  //   }
+  // };
  
   
   return (
@@ -186,13 +187,14 @@ function SignupPage(props) {
     </div>
 
     <div className="w-1/2">
-      <Lottie 
-	    options={defaultOptions}
-        height={400}
-        width={400}
-      />
+      
     </div>
-
+    <Lottie
+      loop
+      animationData={animationData}
+      play
+      style={{ width: 400, height: 400, margin:"0 auto" }}
+    />
 
     </div>
     </> 
