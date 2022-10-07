@@ -187,14 +187,16 @@ function SignupPage(props) {
     </div>
 
     <div className="w-1/2">
-      
-    </div>
     <Lottie
       loop
       animationData={animationData}
       play
       style={{ width: 400, height: 400, margin:"0 auto" }}
+      rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
+
     />
+    </div>
+    
 
     </div>
     </> 

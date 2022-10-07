@@ -58,11 +58,15 @@
     .light p,
     .light h1,
     .light h3 {
-      @apply text-black hover:text-blue-600
+      @apply text-black hover:text-primary
     }
     
     .light span {
-      @apply text-blue-600
+      @apply text-primary
+    }
+
+    .dark span {
+      @apply text-primary
     }
 
     .dark a,

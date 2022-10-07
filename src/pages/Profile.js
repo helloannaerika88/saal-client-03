@@ -75,7 +75,7 @@ function Profile() {
 
 <Link to="/rooms">
 <button
-className="btn-primary block mx-auto w-200 text-sm font-semibold rounded-lg hover:bg-red-300 focus:outline-none focus:shadow-outline focus:bg-gray-100 hover:shadow-xs p-3 my-4">
+className="btn-primary mb-11 block mx-auto w-200 text-sm font-semibold rounded-lg hover:bg-red-300 focus:outline-none focus:shadow-outline focus:bg-gray-100 hover:shadow-xs p-3 my-4">
 Back to room page</button>
 </Link>
    
